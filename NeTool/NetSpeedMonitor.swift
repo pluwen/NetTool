@@ -279,13 +279,8 @@ open class NetSpeedMonitor {
             return "MAX /S"
         }
         
-        if result < 100 {
-            // keep at most 2 decimals.
-            return String((result * 100).rounded() / 100) + " " + unit
-        } else {
-            // keep at most 1 decimal.
-            return String((result * 10).rounded() / 10) + " " + unit
-        }
+        return String((result * 10).rounded() / 10) + " " + unit
+        
     }
     
     func getPbIndexByPid(pid: String) -> Int? {
